@@ -6,6 +6,7 @@ import java.util.List;
 import com.ea.objects.creativetabs.EACreativeTab;
 import com.ea.proxy.CommonProxy;
 import com.ea.util.Reference;
+import com.ea.util.handlers.CraftingHandler;
 
 import net.minecraft.client.gui.recipebook.IRecipeShownListener;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -42,7 +43,7 @@ public class Main {
 	
 	@EventHandler
 	public static void init(FMLInitializationEvent event) {
-		
+		CraftingHandler.removeRecipes();
 	}
 	
 	@EventHandler

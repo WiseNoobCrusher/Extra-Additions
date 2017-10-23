@@ -1,0 +1,54 @@
+package com.ea.util.handlers;
+
+import java.util.ArrayList;
+
+import com.ea.util.DummyRecipeNo;
+import com.google.common.collect.Lists;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.util.JsonUtils;
+import net.minecraft.util.NonNullList;
+import net.minecraftforge.common.crafting.CraftingHelper;
+import net.minecraftforge.common.crafting.JsonContext;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import net.minecraftforge.registries.ForgeRegistry;
+
+public class CraftingHandler {
+	public static void registerRecipes() {
+		
+	}
+	
+	public static void removeRecipes() {
+		 ForgeRegistry<IRecipe> recipeRegistry = (ForgeRegistry<IRecipe>)ForgeRegistries.RECIPES;
+		 ArrayList<IRecipe> recipes = Lists.newArrayList(recipeRegistry.getValues());
+		 
+		 for (IRecipe r : recipes)
+         {
+             ItemStack output = r.getRecipeOutput();
+             if (output.getItem() == Item.getItemFromBlock(Blocks.PLANKS))
+             {
+                 recipeRegistry.remove(r.getRegistryName());
+                 //recipeRegistry.register(DummyRecipe.from(r));
+             }
+         }
+	}
+	
+	public static NonNullList<Ingredient> parseShapeless(JsonContext context, JsonObject json) {
+		final NonNullList<Ingredient> ingredients = NonNullList.create();
+		for (final JsonElement element : JsonUtils.getJsonArray(json, "ingredients"))
+			ingredients.add(CraftingHelper.getIngredient(element, context));
+
+		if (ingredients.isEmpty())
+			throw new JsonParseException("No ingredients for shapeless recipe");
+
+		return ingredients;
+	}
+}
