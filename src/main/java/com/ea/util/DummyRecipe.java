@@ -6,7 +6,7 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 
-public class DummyRecipeNo extends IForgeRegistryEntry.Impl<IRecipe> implements IRecipe {
+public class DummyRecipe extends IForgeRegistryEntry.Impl<IRecipe> implements IRecipe {
     private final ItemStack output;
 
     public DummyRecipeNo(ItemStack output) {
