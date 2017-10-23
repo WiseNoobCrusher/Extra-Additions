@@ -1,0 +1,16 @@
+[
+{
+  "modid": "ea",
+  "name": "Extra Additions",
+  "description": "Adds extra items to minecraft like, wood chunks, etc",
+  "version": "${version}",
+  "mcversion": "${1.12.2}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["WiseNoobCrusher"],
+  "credits": "The Forge and FML guys, for making this example",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

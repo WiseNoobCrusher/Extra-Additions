@@ -1,0 +1,6 @@
+//Items\\
+//Wood Chunks\\
+item.oak_chunks.name=Oak Wood Chunks
+
+//CreativeTab\\
+itemGroup.ea1=Extra Additions
