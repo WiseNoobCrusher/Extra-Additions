@@ -40,15 +40,4 @@ public class CraftingHandler {
              }
          }
 	}
-	
-	public static NonNullList<Ingredient> parseShapeless(JsonContext context, JsonObject json) {
-		final NonNullList<Ingredient> ingredients = NonNullList.create();
-		for (final JsonElement element : JsonUtils.getJsonArray(json, "ingredients"))
-			ingredients.add(CraftingHelper.getIngredient(element, context));
-
-		if (ingredients.isEmpty())
-			throw new JsonParseException("No ingredients for shapeless recipe");
-
-		return ingredients;
-	}
 }
