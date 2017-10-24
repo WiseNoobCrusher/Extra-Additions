@@ -1,0 +1,20 @@
+{
+
+    "type": "ea:cutting_shapeless",
+    "group": "minecraft:planks",
+    "ingredients": [
+        {
+            "item": "minecraft:wooden_axe",
+            "data": 32767
+        },
+        {
+            "item": "minecraft:log",
+            "data": 0
+        }
+    ],
+    "result": {
+        "item": "minecraft:planks",
+        "data": 0,
+        "count": 2
+    }
+}

@@ -9,12 +9,12 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 public class DummyRecipe extends IForgeRegistryEntry.Impl<IRecipe> implements IRecipe {
     private final ItemStack output;
 
-    public DummyRecipeNo(ItemStack output) {
+    public DummyRecipe(ItemStack output) {
         this.output = output;
     }
 
     public static IRecipe from(IRecipe other) {
-        return new DummyRecipeNo(other.getRecipeOutput()).setRegistryName(other.getRegistryName());
+        return new DummyRecipe(other.getRecipeOutput()).setRegistryName(other.getRegistryName());
     }
 
     @Override

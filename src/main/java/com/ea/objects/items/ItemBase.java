@@ -7,7 +7,10 @@ import com.ea.proxy.ClientProxy;
 import com.ea.util.IHasModel;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
 public class ItemBase extends Item implements IHasModel {
 	public ItemBase(String name) {
