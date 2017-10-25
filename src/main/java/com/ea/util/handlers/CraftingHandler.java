@@ -2,7 +2,7 @@ package com.ea.util.handlers;
 
 import java.util.ArrayList;
 
-import com.ea.util.AxeDamage;
+import com.ea.init.ItemInit;
 import com.ea.util.DummyRecipe;
 import com.google.common.collect.Lists;
 import com.google.gson.JsonElement;
@@ -36,30 +36,11 @@ public class CraftingHandler {
 		 for (IRecipe r : recipes)
          {
              ItemStack output = r.getRecipeOutput();
-             if (output.getItem() == Item.getItemFromBlock(Blocks.BREWING_STAND))
+             if (output.getItem() == Item.getItemFromBlock(Blocks.PLANKS))
              {
                  recipeRegistry.remove(r.getRegistryName());
                  recipeRegistry.register(DummyRecipe.from(r));
              }
          }
 	}
-	
-	public static void damageAxe() {
-		 ForgeRegistry<IRecipe> recipeRegistry = (ForgeRegistry<IRecipe>)ForgeRegistries.RECIPES;
-		 ArrayList<IRecipe> recipes = Lists.newArrayList(recipeRegistry.getValues());
-		 
-		 for (IRecipe r : recipes)
-        {
-            ItemStack output = r.getRecipeOutput();
-            if (output.getItem() == Item.getItemFromBlock(Blocks.PLANKS))
-            {
-                recipeRegistry.remove(r.getRegistryName());
-                recipeRegistry.register(AxeDamage.from(r));
-            }
-        }
-	}
-	
-	public CraftingHandler(ItemStack output) {
-        AxeDamage.output = output;
-    }
 }

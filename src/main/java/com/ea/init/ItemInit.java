@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.ea.objects.items.ItemBase;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 

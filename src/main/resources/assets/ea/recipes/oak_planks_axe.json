@@ -4,7 +4,7 @@
     "group": "minecraft:planks",
     "ingredients": [
         {
-            "item": "minecraft:wooden_axe",
+            "item": "minecraft:diamond_axe",
             "data": 32767
         },
         {
